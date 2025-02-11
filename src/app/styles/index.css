@@ -1,0 +1,15 @@
+/* Определение переменных для светлой и темной темы background*/
+:root {
+  --background-light: #f4f6f9; /* Светлый фон */
+  --background-dark: #1c1c1e; /* Темный фон */
+}
+
+/* Стиль для элементов на светлой теме */
+html:not(.dark) {
+  background-color: var(--background-light);
+}
+
+/* Стиль для элементов на темной теме */
+html.dark {
+  background-color: var(--background-dark);
+}
