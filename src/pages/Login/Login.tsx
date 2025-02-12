@@ -23,7 +23,7 @@ const Login = () => {
 
   // Обработчик отправки формы
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("Submitted data:", data)
+    console.log("Submittedw data:", data)
   }
 
   return (
