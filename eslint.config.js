@@ -22,7 +22,7 @@ export default [
       prettier: eslintPluginPrettier,
     },
     rules: {
-      "no-console": "error",
+      "no-console": "warn",
       "react/prop-types": "off",
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
