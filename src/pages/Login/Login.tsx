@@ -7,7 +7,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { Link } from "react-router"
 import { ROUTES } from "@utils/constants/routes"
 
-interface FormValues {
+type FormValues = {
   email: string
   password: string
 }
