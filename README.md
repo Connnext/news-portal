@@ -1,50 +1,139 @@
-# React + TypeScript + Vite
+# 🌐 My News Portal Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my **News Portal** project! This application is designed to deliver a modern and customizable news platform with multilingual support, theming, and state management.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React** (Frontend Framework)
+- 🛠️ **TypeScript** (Static Typing)
+- 🔄 **Zustand** (State Management)
+- 🌐 **i18next** (Multilingual Support: English, Russian, etc.)
+- 🎨 **Chakra UI** (Customizable UI with Theme Support)
+- 🌗 **Themes** (Light/Dark mode via Chakra UI's `useColorMode`)
+- 📡 **Axios** (API Requests)
+- 🧪 **Jest + React Testing Library** (Unit & Component Testing)
+- 📂 **Feature-Sliced Design (FSD)** (Project Structure & Code Organization)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📖 About the Project
 
-- Configure the top-level `parserOptions` property like this:
+The **News Portal** application allows users to:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Browse and read news articles
+- Switch between light and dark themes
+- View news in multiple languages
+- Manage state efficiently with Zustand
+- Fetch and display news dynamically using Axios
+
+## 📸 Screenshots
+
+![Home Screen](assets/home_screen.png)
+![Article Page](assets/article_page.png)
+![Dark Mode](assets/dark_mode.png)
+
+## 🎥 Demo Video
+
+[![Demo Video](http://img.youtube.com/vi/abcd1234/0.jpg)](http://www.youtube.com/watch?v=abcd1234)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you start, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/news-portal.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd news-portal
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+   #### or
+
+   ```bash
+   yarn install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+   #### or
+
+   ```bash
+   yarn start
+   ```
+
+---
+
+## 🧪 Running Tests
+
+To run unit tests:
+
+```bash
+npm test
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+#### or
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react"
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-})
+```bash
+yarn test
 ```
+
+---
+
+## 📂 Project Structure (FSD)
+
+The project follows the **Feature-Sliced Design (FSD)** methodology for modular and scalable architecture:
+
+```
+/src
+ ├── app/        # Application-level configurations
+ ├── entities/   # Business domain models (e.g., Article, User)
+ ├── features/   # Independent features (e.g., Theme Switch, Language Selector)
+ ├── shared/     # Reusable UI components and utilities
+ ├── widgets/    # Complex UI components (e.g., Navbar, Footer)
+ ├── pages/      # Page components (e.g., HomePage, ArticlePage)
+ ├── index.tsx   # Entry point
+```
+
+---
+
+## 📌 Features
+
+- 📰 **Dynamic News Fetching** (via Axios API calls)
+- 🌎 **Multilingual Support** (i18next for translations)
+- 🎨 **Light/Dark Mode** (Chakra UI `useColorMode`)
+- 🚀 **Optimized State Management** (Zustand for global state)
+- ✅ **Unit & Component Testing** (Jest + React Testing Library)
+- 🏗 **Feature-Sliced Design** (for scalability & maintainability)
+
+---
+
+## 📞 Contact
+
+If you have any questions or suggestions, feel free to reach out!
+
+🔗 **GitHub:** [your-username/news-portal](https://github.com/your-username/news-portal)
+📧 **Email:** your-email@example.com
