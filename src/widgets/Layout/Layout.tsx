@@ -7,11 +7,11 @@ import { useThemeColors } from "@hooks/useThemeColor"
 
 const Layout: React.FC = () => {
   const { onOpen, onClose } = useDisclosure() // кастомный хук из Chakra UI, который помогает управлять состоянием открытости
-  const { text, background } = useThemeColors()
+  const { background, textPrimary, backgroundContent } = useThemeColors()
   return (
     <Box background={background} pb={"40px"}>
       <Container>
-        <Flex minH={"100vh"} color={background} borderRadius={"20px"}>
+        <Flex minH={"100vh"} color={textPrimary} borderRadius={"20px"}>
           <Sidebar onClose={() => onClose} />
           <Box w={"full"}>
             <Header onOpen={onOpen} />
@@ -20,7 +20,7 @@ const Layout: React.FC = () => {
               p="4"
               border={"red"}
               borderRadius={"2xl"}
-              background={text}
+              background={backgroundContent}
             >
               {/* Outlet отображает дочерние маршруты */}
               <Outlet />

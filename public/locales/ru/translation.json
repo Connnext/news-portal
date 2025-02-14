@@ -1,0 +1,64 @@
+{
+  "theme": {
+    "dark": "Темная тема",
+    "light": "Светлая тема",
+    "system": "Системная тема"
+  },
+  "navigation": {
+    "home": "Главная",
+    "latest_news": "Последние новости",
+    "categories": "Категории",
+    "trending": "Популярное",
+    "search": "Поиск",
+    "about_us": "О нас",
+    "contact": "Контакты",
+    "subscribe": "Подписаться",
+    "login": "Войти",
+    "register": "Регистрация",
+    "logout": "Выйти"
+  },
+  "categories": {
+    "world": "Мир",
+    "politics": "Политика",
+    "business": "Бизнес",
+    "technology": "Технологии",
+    "science": "Наука",
+    "health": "Здоровье",
+    "sports": "Спорт",
+    "entertainment": "Развлечения",
+    "lifestyle": "Образ жизни",
+    "opinion": "Мнения"
+  },
+  "articles": {
+    "by": "Автор",
+    "published_on": "Опубликовано",
+    "updated_on": "Обновлено",
+    "read_more": "Читать далее",
+    "share": "Поделиться",
+    "comments": "Комментарии",
+    "leave_comment": "Оставить комментарий",
+    "related_articles": "Связанные статьи"
+  },
+  "auth": {
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "email": "Электронная почта",
+    "remember_me": "Запомнить меня",
+    "forgot_password": "Забыли пароль?",
+    "create_account": "Создать аккаунт",
+    "or_login_with": "Или войдите через",
+    "or_register_with": "Или зарегистрируйтесь через"
+  },
+  "errors": {
+    "page_not_found": "Страница не найдена",
+    "something_went_wrong": "Что-то пошло не так",
+    "no_results_found": "Ничего не найдено",
+    "unauthorized": "У вас нет доступа к этой странице"
+  },
+  "footer": {
+    "privacy_policy": "Политика конфиденциальности",
+    "terms_of_service": "Условия использования",
+    "follow_us": "Подписывайтесь на нас",
+    "newsletter": "Подписаться на рассылку"
+  }
+}

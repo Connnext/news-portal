@@ -1,9 +1,10 @@
-import React from "react"
 import { NavItemProps } from "../Sidebar.types"
 import { Box, Flex } from "@chakra-ui/react"
 import { Link } from "react-router"
+import { useThemeColors } from "@hooks/useThemeColor"
 
 const NavItem = ({ icon, children, route }: NavItemProps) => {
+  const { secondary, textPrimary } = useThemeColors()
   return (
     <Link to={route}>
       <Flex
@@ -13,9 +14,10 @@ const NavItem = ({ icon, children, route }: NavItemProps) => {
         borderRadius="lg"
         role="group"
         cursor="pointer"
+        color={textPrimary}
         _hover={{
-          bg: "#F76C6C",
-          color: "white",
+          bg: secondary,
+          color: textPrimary,
         }}
       >
         {icon ? (

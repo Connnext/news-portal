@@ -17,13 +17,20 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>() // Инициализация useForm
+  } = useForm<FormValues>()
 
-  const { primary, background, text } = useThemeColors()
+  const {
+    primary,
+    primaryHover,
+    background,
+    backgroundContent,
+    textPrimary,
+    textSecondary,
+    textSecondaryHover,
+  } = useThemeColors()
 
-  // Обработчик отправки формы
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("Submittedw data:", data)
+    console.log("Submitted data:", data)
   }
 
   return (
@@ -32,28 +39,29 @@ const Login = () => {
         minH={"100vh"}
         align={"center"}
         justify={"center"}
-        color={text}
+        color={textPrimary}
         bg={background}
       >
         <Stack mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"} mb={2}>
-            <Heading fontSize={"4xl"}>Log in to your account</Heading>
-            <Text fontSize={"lg"} color={text}>
+            <Heading fontSize={"4xl"} color={textPrimary}>
+              Log in to your account
+            </Heading>
+            <Text fontSize={"lg"} color={textSecondary}>
               to enjoy all of our cool{" "}
-              <Text color={primary}>
-                <Link to={"https://www.youtube.com/"}>features ✌️</Link>{" "}
+              <Text as="span" color={textSecondaryHover}>
+                <Link to={"https://www.youtube.com/"}>features ✌️</Link>
               </Text>
             </Text>
           </Stack>
           <Box
             rounded={"lg"}
-            color={text}
-            bg={background}
+            color={textPrimary}
+            bg={backgroundContent}
             boxShadow={"lg"}
             p={8}
           >
             <Stack gap={"4"} align={"center"} maxW={"sm"} w={"full"}>
-              {/* Поле для email */}
               <Field
                 label="Email"
                 required
@@ -72,7 +80,6 @@ const Login = () => {
                 />
               </Field>
 
-              {/* Поле для password */}
               <Field
                 label="Password"
                 required
@@ -94,32 +101,24 @@ const Login = () => {
 
               <Stack gap={3} w={"full"}>
                 <Flex gap="10" w={"full"} justify={"space-between"}>
-                  <Checkbox>Remember me</Checkbox>
-                  <Text fontSize={"14px"} color={primary}>
+                  <Checkbox colorScheme="blue">Remember me</Checkbox>
+                  <Text fontSize={"14px"} color={textSecondaryHover}>
                     <Link to={ROUTES.FORGOT_PASSWORD}>Forgot password?</Link>
                   </Text>
                 </Flex>
 
                 <Button
-                  colorPalette={"cyan"}
                   type="submit"
-                  variant="outline"
                   w={"full"}
-                  color={text}
-                  bg={background}
+                  bg={primary}
+                  color={"white"}
                   _hover={{
-                    bg: primary,
-                    color: "white",
+                    bg: primaryHover,
                   }}
                 >
                   Login
                 </Button>
-                <Text
-                  color={primary}
-                  fontSize={"sm"}
-                  textAlign={"left"}
-                  cursor={"pointer"}
-                >
+                <Text fontSize={"sm"} color={textSecondaryHover}>
                   <Link to={ROUTES.HOME}>Back</Link>
                 </Text>
               </Stack>
@@ -131,12 +130,15 @@ const Login = () => {
             p={4}
             borderWidth="1px"
             borderRadius="md"
-            bg={background}
+            bg={backgroundContent}
             textAlign="center"
           >
-            <Text fontSize="sm" color={primary}>
+            <Text fontSize="sm" color={textSecondary}>
               Don&apos;t have an account?{" "}
-              <Link to={ROUTES.REGISTRATION} style={{ fontWeight: "bold" }}>
+              <Link
+                to={ROUTES.REGISTRATION}
+                style={{ fontWeight: "bold", color: textSecondaryHover }}
+              >
                 Sign up here
               </Link>
             </Text>

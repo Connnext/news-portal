@@ -14,7 +14,7 @@ import { useThemeColors } from "@hooks/useThemeColor"
 import { useTranslation } from "react-i18next"
 
 const Sidebar = ({ onClose }: SidebarProps) => {
-  const { background, text } = useThemeColors()
+  const { background, textPrimary } = useThemeColors()
   const { t } = useTranslation()
 
   const LinkItems: Array<LinkItemProps> = [
@@ -29,7 +29,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
     <Box
       display={"block"}
       minH="100vh"
-      color={text}
+      color={textPrimary}
       bg={background}
       borderRight="1px"
       w={{ base: "full", md: "60" }}
