@@ -1,12 +1,7 @@
 import React from "react"
 
-const Friends = () => {
-  return (
-    <div>
-      {/* Ваш контент */}
-      Friends Page Content
-    </div>
-  )
+const Friends: React.FC = () => {
+  return <></>
 }
 
 export default Friends

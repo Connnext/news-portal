@@ -4,7 +4,7 @@ import { Box, Flex, Text } from "@chakra-ui/react"
 import { LinkItemProps, SidebarProps } from "./Sidebar.types"
 import { CloseButton } from "@components/ui/close-button"
 import NavItem from "./NavItem/NavItem"
-import { ROUTES } from "@utils/constants/routes"
+import { ROUTES } from "@shared/constants/routes"
 import { GrHomeRounded } from "react-icons/gr" // Для Home
 import { GrUserSettings } from "react-icons/gr" // Для Account
 import { GrChat } from "react-icons/gr" // Для Messages
@@ -18,11 +18,36 @@ const Sidebar = ({ onClose }: SidebarProps) => {
   const { t } = useTranslation()
 
   const LinkItems: Array<LinkItemProps> = [
-    { name: t("main.sidebar"), icon: <GrHomeRounded />, route: ROUTES.HOME },
-    { name: "Friends", icon: <GrGroup />, route: ROUTES.FRIENDS },
-    { name: "Messages", icon: <GrChat />, route: ROUTES.MESSAGES },
-    { name: "Likes", icon: <GrLike />, route: ROUTES.LIKES },
-    { name: "Account", icon: <GrUserSettings />, route: ROUTES.ACCOUNT },
+    {
+      id: "1",
+      name: t("navigation.home"),
+      icon: <GrHomeRounded />,
+      route: ROUTES.HOME,
+    },
+    {
+      id: "2",
+      name: t("navigation.friends"),
+      icon: <GrGroup />,
+      route: ROUTES.FRIENDS,
+    },
+    {
+      id: "3",
+      name: t("navigation.messages"),
+      icon: <GrChat />,
+      route: ROUTES.MESSAGES,
+    },
+    {
+      id: "4",
+      name: t("navigation.likes"),
+      icon: <GrLike />,
+      route: ROUTES.LIKES,
+    },
+    {
+      id: "5",
+      name: t("navigation.account"),
+      icon: <GrUserSettings />,
+      route: ROUTES.ACCOUNT,
+    },
   ]
 
   return (
@@ -49,7 +74,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon} route={link.route}>
+        <NavItem key={link.id} icon={link.icon} route={link.route}>
           {link.name}
         </NavItem>
       ))}

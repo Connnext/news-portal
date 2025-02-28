@@ -6,6 +6,10 @@
   },
   "navigation": {
     "home": "Главная",
+    "friends": "Друзья",
+    "messages": "Сообщения",
+    "likes": "Лайки",
+    "account": "Аккаунт",
     "latest_news": "Последние новости",
     "categories": "Категории",
     "trending": "Популярное",

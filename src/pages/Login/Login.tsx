@@ -5,7 +5,7 @@ import { Field } from "@components/ui/field"
 import { useThemeColors } from "@hooks/useThemeColor"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Link } from "react-router"
-import { ROUTES } from "@utils/constants/routes"
+import { ROUTES } from "@shared/constants/routes"
 
 type FormValues = {
   email: string

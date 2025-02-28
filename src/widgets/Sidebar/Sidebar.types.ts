@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 import { BoxProps, FlexProps } from "@chakra-ui/react"
 
 export interface LinkItemProps {
+  id: string
   name: string /** Название пункта меню */
   icon: ReactNode /** Иконка из react-icons или JSX-элемент */
   route: string

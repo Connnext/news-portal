@@ -6,6 +6,10 @@
   },
   "navigation": {
     "home": "Home",
+    "friends": "Friends",
+    "messages": "Messages",
+    "likes": "Likes",
+    "account": "Account",
     "latest_news": "Latest News",
     "categories": "Categories",
     "trending": "Trending",
