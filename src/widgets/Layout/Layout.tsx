@@ -1,9 +1,12 @@
 import React from "react"
-import Header from "../Header"
-import Sidebar from "../Sidebar"
-import { Box, Container, Flex, useDisclosure } from "@chakra-ui/react"
 import { Outlet } from "react-router"
+
 import { useThemeColors } from "@hooks/useThemeColor"
+
+import { Box, Container, Flex, useDisclosure } from "@chakra-ui/react"
+
+import Sidebar from "@widgets/Sidebar"
+import Header from "@widgets/Header"
 
 const Layout: React.FC = () => {
   const { onOpen, onClose } = useDisclosure() // кастомный хук из Chakra UI, который помогает управлять состоянием открытости

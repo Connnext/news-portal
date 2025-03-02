@@ -5,13 +5,17 @@ import { LinkItemProps, SidebarProps } from "./Sidebar.types"
 import { CloseButton } from "@components/ui/close-button"
 import NavItem from "./NavItem/NavItem"
 import { ROUTES } from "@shared/constants/routes"
-import { GrHomeRounded } from "react-icons/gr" // Для Home
-import { GrUserSettings } from "react-icons/gr" // Для Account
-import { GrChat } from "react-icons/gr" // Для Messages
-import { GrLike } from "react-icons/gr" // Для Likes
-import { GrGroup } from "react-icons/gr" // Для Friends
+
 import { useThemeColors } from "@hooks/useThemeColor"
 import { useTranslation } from "react-i18next"
+
+import {
+  AccountIcon,
+  FriendsIcon,
+  HomeIcon,
+  LikesIcon,
+  MessagesIcon,
+} from "@shared/ui/icons"
 
 const Sidebar = ({ onClose }: SidebarProps) => {
   const { background, textPrimary } = useThemeColors()
@@ -21,31 +25,31 @@ const Sidebar = ({ onClose }: SidebarProps) => {
     {
       id: "1",
       name: t("navigation.home"),
-      icon: <GrHomeRounded />,
+      icon: <HomeIcon />,
       route: ROUTES.HOME,
     },
     {
       id: "2",
       name: t("navigation.friends"),
-      icon: <GrGroup />,
+      icon: <FriendsIcon />,
       route: ROUTES.FRIENDS,
     },
     {
       id: "3",
       name: t("navigation.messages"),
-      icon: <GrChat />,
+      icon: <MessagesIcon />,
       route: ROUTES.MESSAGES,
     },
     {
       id: "4",
       name: t("navigation.likes"),
-      icon: <GrLike />,
+      icon: <LikesIcon />,
       route: ROUTES.LIKES,
     },
     {
       id: "5",
       name: t("navigation.account"),
-      icon: <GrUserSettings />,
+      icon: <AccountIcon />,
       route: ROUTES.ACCOUNT,
     },
   ]
@@ -73,7 +77,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
+      {LinkItems.map(link => (
         <NavItem key={link.id} icon={link.icon} route={link.route}>
           {link.name}
         </NavItem>

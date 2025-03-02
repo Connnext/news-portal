@@ -20,11 +20,12 @@
     "types": ["vite/client"],
     "paths": {
       "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"],
       "@widgets/*": ["src/widgets/*"],
       "@hooks/*": ["src/hooks/*"],
       "@shared/*": ["src/shared/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@entities/*": ["src/entities/*"],
+      "@features/*": ["src/features/*"]
     }
   },
   "include": ["src"]
