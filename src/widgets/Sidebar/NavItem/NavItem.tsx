@@ -21,7 +21,7 @@ const NavItem = ({ icon, children, route }: NavItemProps) => {
         }}
       >
         {icon ? (
-          <Box mr="4" fontSize="16px">
+          <Box mr="3" fontSize="16px">
             {icon}
           </Box>
         ) : null}
