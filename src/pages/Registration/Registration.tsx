@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Input, Stack, Text } from "@chakra-ui/react"
 
 import { Field } from "@components/ui/field"
-import { useThemeColors } from "@hooks/useThemeColor"
+import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Link } from "react-router"
 import { ROUTES } from "@shared/constants/routes"
@@ -22,7 +22,7 @@ const Registration = () => {
   } = useForm<FormValues>()
   const { primary, background, text } = useThemeColors()
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<FormValues> = data => {
     console.log("Form Data: ", data)
     // Обработка данных, например, отправка на сервер
   }

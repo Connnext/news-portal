@@ -21,7 +21,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@widgets/*": ["src/widgets/*"],
-      "@hooks/*": ["src/hooks/*"],
+      "@hooks/*": ["src/shared/hooks/*"],
       "@shared/*": ["src/shared/*"],
       "@pages/*": ["src/pages/*"],
       "@entities/*": ["src/entities/*"],

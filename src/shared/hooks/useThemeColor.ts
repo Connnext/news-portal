@@ -27,6 +27,7 @@ export const useThemeColors = () => {
   )
   const title = useColorModeValue("title.light", "title.dark")
   const border = useColorModeValue("border.light", "border.dark")
+  const mainHover = useColorModeValue("mainHover.light", "mainHover.dark")
 
   return {
     primary,
@@ -40,5 +41,6 @@ export const useThemeColors = () => {
     textSecondaryHover,
     title,
     border,
+    mainHover,
   }
 }

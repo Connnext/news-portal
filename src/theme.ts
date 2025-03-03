@@ -13,6 +13,7 @@ const COLORS = {
     border: "#DCDCDC",
     background: "#F4F6F9",
     backgroundContent: "#FFFFFF",
+    mainHover: "#0000001f",
   },
   dark: {
     primary: "#2170cd",
@@ -26,6 +27,7 @@ const COLORS = {
     border: "#3A3A3C",
     background: "#1C1C1E",
     backgroundContent: "#222222",
+    mainHover: "#212121",
   },
 }
 
@@ -77,6 +79,10 @@ const config = defineConfig({
         border: {
           light: { value: COLORS.light.border },
           dark: { value: COLORS.dark.border },
+        },
+        mainHover: {
+          light: { value: COLORS.light.mainHover },
+          dark: { value: COLORS.dark.mainHover },
         },
       },
       fonts: {

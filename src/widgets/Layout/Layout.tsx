@@ -1,7 +1,7 @@
 import React from "react"
 import { Outlet } from "react-router"
 
-import { useThemeColors } from "@hooks/useThemeColor"
+import { useThemeColors } from "@shared/hooks/useThemeColor"
 
 import { Box, Container, Flex, useDisclosure } from "@chakra-ui/react"
 

@@ -6,7 +6,7 @@ import { CloseButton } from "@components/ui/close-button"
 import NavItem from "./NavItem/NavItem"
 import { ROUTES } from "@shared/constants/routes"
 
-import { useThemeColors } from "@hooks/useThemeColor"
+import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { useTranslation } from "react-i18next"
 
 import {

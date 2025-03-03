@@ -1,24 +1,20 @@
 import { Link } from "react-router"
-import { Box, Flex, Heading, Input, Stack, Text } from "@chakra-ui/react"
-import { Button } from "@components/ui/button"
-import { Checkbox } from "@components/ui/checkbox"
-import { Field } from "@components/ui/field"
-import { useThemeColors } from "@shared/hooks/useThemeColor"
-import { useForm, SubmitHandler } from "react-hook-form"
+import {
+  Box,
+  Button,
+  Checkbox,
+  Field,
+  Flex,
+  Heading,
+  Input,
+  Stack,
+  Text,
+} from "@chakra-ui/react"
+
 import { ROUTES } from "@shared/constants/routes"
+import { useThemeColors } from "@shared/hooks/useThemeColor"
 
-type FormValues = {
-  email: string
-  password: string
-}
-
-const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>()
-
+export default function LoginForm() {
   const {
     primary,
     primaryHover,
@@ -28,10 +24,6 @@ const Login = () => {
     textSecondary,
     textSecondaryHover,
   } = useThemeColors()
-
-  const onSubmit: SubmitHandler<FormValues> = data => {
-    console.log("Submitted data:", data)
-  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -148,5 +140,3 @@ const Login = () => {
     </form>
   )
 }
-
-export default Login

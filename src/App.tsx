@@ -3,7 +3,7 @@ import { AppRouter } from "./app/router/AppRouter"
 import { ChakraProvider } from "@chakra-ui/react"
 import { ThemeProvider } from "next-themes"
 
-import useSystemTheme from "@hooks/useSystemTheme"
+import useSystemTheme from "@shared/hooks/useSystemTheme"
 import theme from "./theme"
 
 function App() {

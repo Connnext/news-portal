@@ -1,10 +1,10 @@
-import { NavItemProps } from "../Sidebar.types"
-import { Box, Flex } from "@chakra-ui/react"
 import { Link } from "react-router"
-import { useThemeColors } from "@hooks/useThemeColor"
+import { useThemeColors } from "@shared/hooks/useThemeColor"
+import { Box, Flex } from "@chakra-ui/react"
+import { NavItemProps } from "../Sidebar.types"
 
 const NavItem = ({ icon, children, route }: NavItemProps) => {
-  const { secondary, textPrimary } = useThemeColors()
+  const { textPrimary, backgroundContent } = useThemeColors()
   return (
     <Link to={route}>
       <Flex
@@ -16,13 +16,13 @@ const NavItem = ({ icon, children, route }: NavItemProps) => {
         cursor="pointer"
         color={textPrimary}
         _hover={{
-          bg: secondary,
+          bg: backgroundContent,
           color: textPrimary,
         }}
       >
         {icon ? (
           <Box mr="4" fontSize="16px">
-            {icon} {/* Рендерим компонент иконки напрямую */}
+            {icon}
           </Box>
         ) : null}
         {children}

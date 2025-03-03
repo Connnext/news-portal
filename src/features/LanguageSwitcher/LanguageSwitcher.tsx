@@ -8,12 +8,13 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react"
-import { useThemeColors } from "@hooks/useThemeColor"
-import { LanguageIcon, RusFlagIcon } from "@shared/ui/icons"
+import { useThemeColors } from "@shared/hooks/useThemeColor"
+
+import { LanguageIcon, RusFlagIcon, USAFlagIcon } from "@shared/ui/icons"
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation()
-  const { background } = useThemeColors()
+  const { background, backgroundContent } = useThemeColors()
 
   const handleLanguageChange = (e: { value: string }) => {
     i18n.changeLanguage(e.value)
@@ -28,6 +29,10 @@ export const LanguageSwitcher = () => {
             variant="subtle"
             size="lg"
             bg={background}
+            _hover={{
+              bg: backgroundContent,
+            }}
+            _focusVisible={{ outline: "none", bg: backgroundContent }}
           >
             <LanguageIcon />
           </Button>
@@ -46,7 +51,10 @@ export const LanguageSwitcher = () => {
             value={i18n.language}
             onValueChange={handleLanguageChange}
           >
-            <MenuRadioItem value="en"> English</MenuRadioItem>
+            <MenuRadioItem value="en">
+              {" "}
+              <USAFlagIcon /> English
+            </MenuRadioItem>
             <MenuRadioItem value="ru">
               {" "}
               <RusFlagIcon /> Русский

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next"
-import { useThemeColors } from "@hooks/useThemeColor"
-import useSystemTheme from "@hooks/useSystemTheme"
+
+import { useThemeColors } from "@shared/hooks/useThemeColor"
+import useSystemTheme from "@shared/hooks/useSystemTheme"
 
 import {
   Box,
@@ -16,7 +17,7 @@ import { LightThemeIcon, DarkThemeIcon } from "@shared/ui/icons"
 
 export const ThemeSwitcher = () => {
   const { colorMode, setColorMode } = useColorMode()
-  const { background } = useThemeColors()
+  const { background, backgroundContent } = useThemeColors()
   const { t } = useTranslation()
   const systemTheme = useSystemTheme()
 
@@ -38,6 +39,10 @@ export const ThemeSwitcher = () => {
             variant="subtle"
             size="lg"
             bg={background}
+            _hover={{
+              bg: backgroundContent,
+            }}
+            _focusVisible={{ outline: "none", bg: backgroundContent }}
           >
             {colorMode === "light" ? <DarkThemeIcon /> : <LightThemeIcon />}
           </Button>
