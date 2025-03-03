@@ -1,4 +1,13 @@
 /* Определение переменных для светлой и темной темы background*/
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap");
+
+body {
+  font-family: "Sigmar", cursive;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --background-light: #f4f6f9; /* Светлый фон */
   --background-dark: #1c1c1e; /* Темный фон */
@@ -13,3 +22,9 @@ html:not(.dark) {
 html.dark {
   background-color: var(--background-dark);
 }
+
+/* В CSS-файле */
+
+/* h1 {
+  font-family: "Open Sans", sans-serif;
+} */

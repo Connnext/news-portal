@@ -1,46 +1,45 @@
 import { useColorModeValue } from "@components/ui/color-mode"
 
-export const useThemeColors = () => {
-  const primary = useColorModeValue("primary.light", "primary.dark")
-  const primaryHover = useColorModeValue(
-    "primaryHover.light",
-    "primaryHover.dark",
-  )
-  const secondary = useColorModeValue("secondary.light", "secondary.dark")
-  const secondaryHover = useColorModeValue(
-    "secondaryHover.light",
-    "secondaryHover.dark",
-  )
-  const background = useColorModeValue("background.light", "background.dark")
-  const backgroundContent = useColorModeValue(
-    "backgroundContent.light",
-    "backgroundContent.dark",
-  )
-  const textPrimary = useColorModeValue("textPrimary.light", "textPrimary.dark")
-  const textSecondary = useColorModeValue(
-    "textSecondary.light",
-    "textSecondary.dark",
-  )
-  const textSecondaryHover = useColorModeValue(
-    "textSecondaryHover.light",
-    "textSecondaryHover.dark",
-  )
-  const title = useColorModeValue("title.light", "title.dark")
-  const border = useColorModeValue("border.light", "border.dark")
-  const mainHover = useColorModeValue("mainHover.light", "mainHover.dark")
+interface ThemeColors {
+  primary?: string
+  primaryHover?: string
+  secondary?: string
+  secondaryHover?: string
+  background?: string
+  backgroundContent?: string
+  textPrimary?: string
+  textSecondary?: string
+  textSecondaryHover?: string
+  title?: string
+  border?: string
+  mainHover?: string
+}
 
+export const useThemeColors = (): ThemeColors => {
   return {
-    primary,
-    primaryHover,
-    secondary,
-    secondaryHover,
-    background,
-    backgroundContent,
-    textPrimary,
-    textSecondary,
-    textSecondaryHover,
-    title,
-    border,
-    mainHover,
+    primary: useColorModeValue("primary.light", "primary.dark"),
+    primaryHover: useColorModeValue("primaryHover.light", "primaryHover.dark"),
+    secondary: useColorModeValue("secondary.light", "secondary.dark"),
+    secondaryHover: useColorModeValue(
+      "secondaryHover.light",
+      "secondaryHover.dark",
+    ),
+    background: useColorModeValue("background.light", "background.dark"),
+    backgroundContent: useColorModeValue(
+      "backgroundContent.light",
+      "backgroundContent.dark",
+    ),
+    textPrimary: useColorModeValue("textPrimary.light", "textPrimary.dark"),
+    textSecondary: useColorModeValue(
+      "textSecondary.light",
+      "textSecondary.dark",
+    ),
+    textSecondaryHover: useColorModeValue(
+      "textSecondaryHover.light",
+      "textSecondaryHover.dark",
+    ),
+    title: useColorModeValue("title.light", "title.dark"),
+    border: useColorModeValue("border.light", "border.dark"),
+    mainHover: useColorModeValue("mainHover.light", "mainHover.dark"),
   }
 }

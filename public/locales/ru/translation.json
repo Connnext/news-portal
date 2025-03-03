@@ -51,8 +51,20 @@
     "forgot_password": "Забыли пароль?",
     "create_account": "Создать аккаунт",
     "or_login_with": "Или войдите через",
-    "or_register_with": "Или зарегистрируйтесь через"
+    "or_register_with": "Или зарегистрируйтесь через",
+    "log_in_to_account": "Войдите в свой аккаунт",
+    "enjoy_features": "чтобы наслаждаться всеми нашими возможностями",
+    "dont_have_account": "Нет аккаунта?",
+    "sign_up_here": "Зарегистрируйтесь здесь",
+    "enter_your_email": "Введите вашу электронную почту",
+    "enter_your_password": "Введите ваш пароль",
+    "password_required": "Пароль обязателен",
+    "password_min_length": "Пароль должен содержать не менее 6 символов",
+    "valid_email_required": "Введите действительный адрес электронной почты",
+    "back": "Назад",
+    "login": "Войти"
   },
+
   "errors": {
     "page_not_found": "Страница не найдена",
     "something_went_wrong": "Что-то пошло не так",

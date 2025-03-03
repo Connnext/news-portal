@@ -1,29 +1,34 @@
 import { Link } from "react-router"
-import {
-  Box,
-  Button,
-  Checkbox,
-  Field,
-  Flex,
-  Heading,
-  Input,
-  Stack,
-  Text,
-} from "@chakra-ui/react"
+import { Box, Button, Flex, Input, Stack, Text } from "@chakra-ui/react"
 
 import { ROUTES } from "@shared/constants/routes"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { Field } from "@components/ui/field"
+import { Checkbox } from "@components/ui/checkbox"
 
+type FormValues = {
+  email: string
+  password: string
+}
 export default function LoginForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>()
   const {
     primary,
     primaryHover,
     background,
     backgroundContent,
     textPrimary,
-    textSecondary,
     textSecondaryHover,
   } = useThemeColors()
+
+  const onSubmit: SubmitHandler<FormValues> = data => {
+    console.log("Submitted data:", data)
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -35,17 +40,6 @@ export default function LoginForm() {
         bg={background}
       >
         <Stack mx={"auto"} maxW={"lg"} py={12} px={6}>
-          <Stack align={"center"} mb={2}>
-            <Heading fontSize={"4xl"} color={textPrimary}>
-              Log in to your account
-            </Heading>
-            <Text fontSize={"lg"} color={textSecondary}>
-              to enjoy all of our cool{" "}
-              <Text as="span" color={textSecondaryHover}>
-                <Link to={"https://www.youtube.com/"}>features ✌️</Link>
-              </Text>
-            </Text>
-          </Stack>
           <Box
             rounded={"lg"}
             color={textPrimary}
@@ -115,25 +109,6 @@ export default function LoginForm() {
                 </Text>
               </Stack>
             </Stack>
-          </Box>
-          <Box
-            boxShadow={"lg"}
-            mt={2}
-            p={4}
-            borderWidth="1px"
-            borderRadius="md"
-            bg={backgroundContent}
-            textAlign="center"
-          >
-            <Text fontSize="sm" color={textSecondary}>
-              Don&apos;t have an account?{" "}
-              <Link
-                to={ROUTES.REGISTRATION}
-                style={{ fontWeight: "bold", color: textSecondaryHover }}
-              >
-                Sign up here
-              </Link>
-            </Text>
           </Box>
         </Stack>
       </Flex>

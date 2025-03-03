@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router"
 import App from "./App"
 import "./i18n"
 
-import "./app/styles/index.css"
+import "@shared/styles/index.css"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

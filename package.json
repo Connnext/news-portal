@@ -12,7 +12,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.8.0",
+    "@chakra-ui/react": "^3.8.1",
     "@emotion/react": "^11.14.0",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.3",

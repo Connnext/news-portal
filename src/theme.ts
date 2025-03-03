@@ -85,10 +85,10 @@ const config = defineConfig({
           dark: { value: COLORS.dark.mainHover },
         },
       },
-      fonts: {
-        heading: { value: `'Poppins', sans-serif` },
-        body: { value: `'Roboto', sans-serif` },
-      },
+      // fonts: {
+      //   heading: { value: `'Poppins', sans-serif` },
+      //   body: { value: `'Roboto', sans-serif` },
+      // },
       cursor: {
         button: { value: "pointer" },
         option: { value: "pointer" },
