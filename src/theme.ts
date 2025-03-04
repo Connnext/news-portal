@@ -13,7 +13,7 @@ const COLORS = {
     border: "#DCDCDC",
     background: "#F4F6F9",
     backgroundContent: "#FFFFFF",
-    mainHover: "#0000001f",
+    mainHover: "#e4e4e7",
   },
   dark: {
     primary: "#2170cd",
@@ -27,7 +27,7 @@ const COLORS = {
     border: "#3A3A3C",
     background: "#1C1C1E",
     backgroundContent: "#222222",
-    mainHover: "#212121",
+    mainHover: "#2a2a2a",
   },
 }
 
@@ -85,10 +85,6 @@ const config = defineConfig({
           dark: { value: COLORS.dark.mainHover },
         },
       },
-      // fonts: {
-      //   heading: { value: `'Poppins', sans-serif` },
-      //   body: { value: `'Roboto', sans-serif` },
-      // },
       cursor: {
         button: { value: "pointer" },
         option: { value: "pointer" },

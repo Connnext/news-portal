@@ -14,7 +14,7 @@ import { LanguageIcon, RusFlagIcon, USAFlagIcon } from "@shared/ui/icons"
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation()
-  const { background, backgroundContent } = useThemeColors()
+  const { primary, background, mainHover } = useThemeColors()
 
   const handleLanguageChange = (e: { value: string }) => {
     i18n.changeLanguage(e.value)
@@ -29,10 +29,8 @@ export const LanguageSwitcher = () => {
             variant="subtle"
             size="lg"
             bg={background}
-            _hover={{
-              bg: backgroundContent,
-            }}
-            _focusVisible={{ outline: "none", bg: backgroundContent }}
+            _hover={{ bg: mainHover }}
+            _focusVisible={{ outline: "none", bg: "transparent" }}
           >
             <LanguageIcon />
           </Button>
@@ -42,20 +40,36 @@ export const LanguageSwitcher = () => {
           position="absolute"
           top="110%"
           left="0"
-          zIndex="10"
           bg={background}
-          boxShadow="md"
-          borderRadius="md"
+          borderRadius="xl"
+          display="flex"
+          flexDirection="column"
         >
           <MenuRadioItemGroup
             value={i18n.language}
             onValueChange={handleLanguageChange}
           >
-            <MenuRadioItem value="en">
+            <MenuRadioItem
+              closeOnSelect={false}
+              value="en"
+              bg={i18n.language === "en" ? mainHover : "inherit"}
+              color={i18n.language === "en" ? primary : "inherit"}
+              _hover={{ bg: mainHover }}
+              borderRadius="lg"
+              cursor={"pointer"}
+            >
               {" "}
               <USAFlagIcon /> English
             </MenuRadioItem>
-            <MenuRadioItem value="ru">
+            <MenuRadioItem
+              closeOnSelect={false}
+              value="ru"
+              bg={i18n.language === "ru" ? mainHover : "inherit"}
+              color={i18n.language === "ru" ? primary : "inherit"}
+              _hover={{ bg: mainHover }}
+              borderRadius="lg"
+              cursor={"pointer"}
+            >
               {" "}
               <RusFlagIcon /> Русский
             </MenuRadioItem>
