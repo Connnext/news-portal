@@ -17,14 +17,8 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>()
-  const {
-    primary,
-    primaryHover,
-    background,
-    backgroundContent,
-    textPrimary,
-    textSecondaryHover,
-  } = useThemeColors()
+  const { primary, primaryHover, textPrimary, textSecondaryHover } =
+    useThemeColors()
 
   const onSubmit: SubmitHandler<FormValues> = data => {
     console.log("Submitted data:", data)
@@ -32,21 +26,9 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Flex
-        minH={"100vh"}
-        align={"center"}
-        justify={"center"}
-        color={textPrimary}
-        bg={background}
-      >
+      <Flex align={"center"} justify={"center"} color={textPrimary}>
         <Stack mx={"auto"} maxW={"lg"} py={12} px={6}>
-          <Box
-            rounded={"lg"}
-            color={textPrimary}
-            bg={backgroundContent}
-            boxShadow={"lg"}
-            p={8}
-          >
+          <Box color={textPrimary} p={8}>
             <Stack gap={"4"} align={"center"} maxW={"sm"} w={"full"}>
               <Field
                 label="Email"

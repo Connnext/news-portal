@@ -35,8 +35,10 @@ const Header: React.FC<HeaderProps> = ({ onOpen }) => {
         Logo
       </Text>
 
-      <ThemeSwitcher />
-      <LanguageSwitcher />
+      <Flex gap={1} justifyContent={"flex-end"}>
+        <ThemeSwitcher />
+        <LanguageSwitcher />
+      </Flex>
     </Flex>
   )
 }

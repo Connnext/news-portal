@@ -27,7 +27,7 @@ export const LanguageSwitcher = () => {
           <Button
             aria-label="Toggle Language"
             variant="subtle"
-            size="lg"
+            size="md"
             bg={background}
             _hover={{ bg: mainHover }}
             _focusVisible={{ outline: "none", bg: "transparent" }}

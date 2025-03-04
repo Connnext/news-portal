@@ -60,7 +60,7 @@ export const ThemeSwitcher = () => {
           <Button
             aria-label="Toggle Theme"
             variant="ghost"
-            size="lg"
+            size="md"
             bg={background}
             _hover={{ bg: mainHover }}
             _focusVisible={{ outline: "none" }}
