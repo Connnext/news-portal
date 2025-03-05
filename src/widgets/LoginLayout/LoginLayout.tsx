@@ -2,7 +2,7 @@ import { Link } from "react-router"
 
 import { Box, Container, Flex, Image, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
-// import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next"
 import { useThemeColors } from "./../../shared/hooks/useThemeColor"
 import { ThemeSwitcher } from "@features/ThemeSwitcher/ThemeSwitcher"
 import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
@@ -14,9 +14,10 @@ interface LoginLayoutProps {
   children: React.ReactNode
 }
 export default function LoginLayout({ children }: LoginLayoutProps) {
-  const { backgroundContent } = useThemeColors()
+  const { backgroundContent, textSecondary, textSecondaryHover } =
+    useThemeColors()
 
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <Container maxW={"5xl"}>
@@ -37,7 +38,6 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
 
         <Flex gap={1}>
           <ThemeSwitcher />
-
           <LanguageSwitcher />
         </Flex>
       </Flex>
@@ -64,17 +64,15 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
             h="100%"
             align="center"
             justify="center"
-            p={"56px"}
+            p={2}
             flexDirection="column"
           >
             {children}
           </Flex>
         </Flex>
+
         {/* Подвал */}
-        {/* Подвал */}
-        {/* Подвал */}
-        {/* Подвал */}
-        {/* <Box
+        <Box
           boxShadow="lg"
           mt={2}
           p={3}
@@ -92,7 +90,7 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
               {t("auth.sign_up_here")}
             </Link>
           </Text>
-        </Box> */}
+        </Box>
       </Flex>
     </Container>
   )

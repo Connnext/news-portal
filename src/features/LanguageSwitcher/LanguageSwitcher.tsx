@@ -28,7 +28,7 @@ export const LanguageSwitcher = () => {
             aria-label="Toggle Language"
             variant="subtle"
             size="md"
-            bg={background}
+            bg={"transparent"}
             _hover={{ bg: mainHover }}
             _focusVisible={{ outline: "none", bg: "transparent" }}
           >

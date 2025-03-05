@@ -4,7 +4,13 @@ import LoginLayout from "@widgets/LoginLayout"
 
 const Login = () => {
   return (
-    <Box overflow="hidden" h="100vh">
+    <Box
+      // bgGradient="to-r"
+      // gradientFrom="blue.900"
+      // gradientTo="pink.300"
+      overflow="hidden"
+      h="100vh"
+    >
       <LoginLayout>
         <LoginForm />
       </LoginLayout>

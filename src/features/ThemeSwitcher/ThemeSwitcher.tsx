@@ -62,7 +62,7 @@ export const ThemeSwitcher = () => {
             aria-label="Toggle Theme"
             variant="ghost"
             size="md"
-            bg={background}
+            bg={"transparent"}
             _hover={{ bg: mainHover }}
             _focusVisible={{ outline: "none" }}
           >

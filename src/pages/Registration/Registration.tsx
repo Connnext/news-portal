@@ -1,11 +1,18 @@
-import { Box, Flex, Heading, Input, Stack, Text } from "@chakra-ui/react"
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Input,
+  Stack,
+  Text,
+} from "@chakra-ui/react"
 
-import { Field } from "@components/ui/field"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Link } from "react-router"
 import { ROUTES } from "@shared/constants/routes"
-import { Button } from "@components/ui/button"
+import { Field } from "@shared/ui/components/field"
 
 interface FormValues {
   email: string
@@ -20,7 +27,7 @@ const Registration = () => {
     watch,
     formState: { errors },
   } = useForm<FormValues>()
-  const { primary, background, text } = useThemeColors()
+  const { primary, background, textPrimary } = useThemeColors()
 
   const onSubmit: SubmitHandler<FormValues> = data => {
     console.log("Form Data: ", data)
@@ -38,7 +45,7 @@ const Registration = () => {
         minH={"100vh"}
         align={"center"}
         justify={"center"}
-        color={text}
+        color={textPrimary}
         bg={background}
       >
         <Stack mx={"auto"} maxW={"lg"} py={12} px={6}>
@@ -47,7 +54,7 @@ const Registration = () => {
           </Stack>
           <Box
             rounded={"lg"}
-            color={text}
+            color={textPrimary}
             bg={background}
             boxShadow={"lg"}
             p={8}
@@ -115,7 +122,7 @@ const Registration = () => {
                   type="submit"
                   variant="outline"
                   w={"full"}
-                  color={text}
+                  color={textPrimary}
                   bg={background}
                   _hover={{
                     bg: primary,

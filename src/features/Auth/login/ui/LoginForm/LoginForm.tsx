@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import { Box, Button, Flex, Input, Stack, Text } from "@chakra-ui/react"
+import { Button, Flex, Heading, Input, Stack, Text } from "@chakra-ui/react"
 
 import { ROUTES } from "@shared/constants/routes"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
@@ -27,8 +27,15 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex align={"center"} justify={"center"} color={textPrimary}>
-        <Stack mx={"auto"} maxW={"lg"} py={12} px={6}>
-          <Box color={textPrimary} p={8}>
+        <Stack mx={"auto"} maxW={"lg"}>
+          <Flex
+            flexDirection={"column"}
+            justifyContent={"space-between"}
+            color={textPrimary}
+          >
+            <Heading display={"flex"} justifyContent={"center"} size={"lg"}>
+              Login
+            </Heading>
             <Stack gap={"4"} align={"center"} maxW={"sm"} w={"full"}>
               <Field
                 label="Email"
@@ -91,7 +98,7 @@ export default function LoginForm() {
                 </Text>
               </Stack>
             </Stack>
-          </Box>
+          </Flex>
         </Stack>
       </Flex>
     </form>

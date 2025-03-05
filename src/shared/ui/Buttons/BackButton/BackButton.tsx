@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react"
 
 export default function BackButton() {
   const navigate = useNavigate()
-  const { background, mainHover } = useThemeColors()
+  const { mainHover } = useThemeColors()
 
   const handleBack = () => {
     navigate(-1)
@@ -15,7 +15,7 @@ export default function BackButton() {
       aria-label="Back"
       variant="ghost"
       size="md"
-      bg={background}
+      bg={"transparent"}
       _hover={{ bg: mainHover }}
       _focusVisible={{ outline: "none" }}
       onClick={handleBack}
