@@ -10,9 +10,10 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react"
-import { ColorMode, useColorMode } from "@components/ui/color-mode"
-import { LightThemeIcon, DarkThemeIcon } from "@shared/ui/icons"
+
+import { LightThemeIcon, DarkThemeIcon } from "@shared/ui/assets/icons"
 import { useState } from "react"
+import { ColorMode, useColorMode } from "@shared/ui/components/color-mode"
 
 export const ThemeSwitcher = () => {
   type ThemeMode = "light" | "dark" | "system"
@@ -69,11 +70,12 @@ export const ThemeSwitcher = () => {
           </Button>
         </MenuTrigger>
         <MenuContent
-          minW="10rem"
+          minW="11rem"
           position="absolute"
           top="110%"
           left="0"
           bg={background}
+          borderWidth="1px"
           borderRadius="xl"
           display="flex"
           flexDirection="column"

@@ -1,7 +1,8 @@
 export { default as LanguageIcon } from "./LanguageIcon"
 export { default as SearchIcon } from "./SearchIcon"
 export { default as NotificationsIcon } from "./NotificationsIcon"
-export { default as Logout } from "./LogoutIcon"
+export { default as LogoutIcon } from "./LogoutIcon"
+export { default as BackIcon } from "./BackIcon"
 
 export { default as RusFlagIcon } from "./RusFlagIcon"
 export { default as USAFlagIcon } from "./USAFlagIcon"

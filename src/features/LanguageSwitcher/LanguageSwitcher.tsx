@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 
-import { LanguageIcon, RusFlagIcon, USAFlagIcon } from "@shared/ui/icons"
+import { LanguageIcon, RusFlagIcon, USAFlagIcon } from "@shared/ui/assets/icons"
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation()
@@ -41,6 +41,7 @@ export const LanguageSwitcher = () => {
           top="110%"
           left="0"
           bg={background}
+          borderWidth="1px"
           borderRadius="xl"
           display="flex"
           flexDirection="column"

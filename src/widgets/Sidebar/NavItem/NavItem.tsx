@@ -11,7 +11,7 @@ const NavItem = ({ icon, children, route }: NavItemProps) => {
         align="center"
         p="4"
         mx="4"
-        borderRadius="lg"
+        borderRadius="xl"
         role="group"
         cursor="pointer"
         color={textPrimary}

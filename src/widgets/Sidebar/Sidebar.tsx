@@ -1,8 +1,7 @@
 import React from "react"
 import {} from "react-icons/gi"
-import { Box, Flex, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Text } from "@chakra-ui/react"
 import { LinkItemProps, SidebarProps } from "./Sidebar.types"
-import { CloseButton } from "@components/ui/close-button"
 import NavItem from "./NavItem/NavItem"
 import { ROUTES } from "@shared/constants/routes"
 
@@ -15,7 +14,7 @@ import {
   HomeIcon,
   LikesIcon,
   MessagesIcon,
-} from "@shared/ui/icons"
+} from "@shared/ui/assets/icons"
 
 const Sidebar = ({ onClose }: SidebarProps) => {
   const { background, textPrimary } = useThemeColors()
@@ -75,7 +74,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
         >
           Strict Sudo
         </Text>
-        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
+        <Button display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map(link => (
         <NavItem key={link.id} icon={link.icon} route={link.route}>

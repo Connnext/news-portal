@@ -12,12 +12,12 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
     const { marks: marksProp, label, showValue, ...rest } = props
     const value = props.defaultValue ?? props.value
 
-    const marks = marksProp?.map((mark) => {
+    const marks = marksProp?.map(mark => {
       if (typeof mark === "number") return { value: mark, label: undefined }
       return mark
     })
 
-    const hasMarkLabel = !!marks?.some((mark) => mark.label)
+    const hasMarkLabel = !!marks?.some(mark => mark.label)
 
     return (
       <ChakraSlider.Root ref={ref} thumbAlignment="center" {...rest}>

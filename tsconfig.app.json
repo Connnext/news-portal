@@ -19,13 +19,12 @@
     "jsx": "react-jsx",
     "types": ["vite/client"],
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@hooks/*": ["src/shared/hooks/*"],
-      "@shared/*": ["src/shared/*"],
       "@pages/*": ["src/pages/*"],
+      "@widgets/*": ["src/widgets/*"],
       "@entities/*": ["src/entities/*"],
-      "@features/*": ["src/features/*"]
+      "@features/*": ["src/features/*"],
+      "@shared/*": ["src/shared/*"],
+      "@hooks/*": ["src/shared/hooks/*"]
     }
   },
   "include": ["src"]

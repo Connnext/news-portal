@@ -1,4 +1,4 @@
-import { useColorModeValue } from "@components/ui/color-mode"
+import { useColorModeValue } from "@shared/ui/components/color-mode"
 
 interface ThemeColors {
   primary?: string

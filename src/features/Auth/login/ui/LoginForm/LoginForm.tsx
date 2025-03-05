@@ -4,8 +4,8 @@ import { Box, Button, Flex, Input, Stack, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { SubmitHandler, useForm } from "react-hook-form"
-import { Field } from "@components/ui/field"
-import { Checkbox } from "@components/ui/checkbox"
+import { Field } from "@shared/ui/components/field"
+import { Checkbox } from "@shared/ui/components/checkbox"
 
 type FormValues = {
   email: string
