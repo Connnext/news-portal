@@ -49,7 +49,6 @@ import { ThemeSwitcher } from "@features/ThemeSwitcher/ThemeSwitcher"
 import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
 
 import Moon from "@shared/ui/assets/images/moon.png"
-import BackButton from "@shared/ui/Buttons/BackButton"
 
 interface LoginLayoutProps {
   children: React.ReactNode
@@ -71,7 +70,6 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
         left={0}
         right={0}
       >
-        <BackButton />
         <Flex gap={2}>
           <ThemeSwitcher />
           <LanguageSwitcher />
