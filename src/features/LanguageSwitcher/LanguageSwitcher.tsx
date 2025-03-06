@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next"
 import {
   Box,
   MenuContent,
-  MenuRadioItem,
   MenuRadioItemGroup,
   MenuRoot,
   MenuTrigger,
@@ -11,6 +10,7 @@ import { useThemeColors } from "@shared/hooks/useThemeColor"
 
 import { LanguageIcon, RusFlagIcon, USAFlagIcon } from "@shared/ui/assets/icons"
 import IconButton from "@shared/ui/Buttons/IconButton"
+import MenuItem from "@shared/ui/MenuItem"
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation()
@@ -43,30 +43,20 @@ export const LanguageSwitcher = () => {
             value={i18n.language}
             onValueChange={handleLanguageChange}
           >
-            <MenuRadioItem
-              closeOnSelect={false}
+            <MenuItem
               value="en"
+              Icon={<USAFlagIcon />}
+              label={"English"}
               bg={i18n.language === "en" ? mainHover : "inherit"}
               color={i18n.language === "en" ? primary : "inherit"}
-              _hover={{ bg: mainHover }}
-              borderRadius="lg"
-              cursor={"pointer"}
-            >
-              {" "}
-              <USAFlagIcon /> English
-            </MenuRadioItem>
-            <MenuRadioItem
-              closeOnSelect={false}
+            ></MenuItem>
+            <MenuItem
               value="ru"
+              Icon={<RusFlagIcon />}
+              label={"Русский"}
               bg={i18n.language === "ru" ? mainHover : "inherit"}
-              color={i18n.language === "ru" ? primary : "inherit"}
-              _hover={{ bg: mainHover }}
-              borderRadius="lg"
-              cursor={"pointer"}
-            >
-              {" "}
-              <RusFlagIcon /> Русский
-            </MenuRadioItem>
+              color={i18n.language === "en" ? primary : "inherit"}
+            ></MenuItem>
           </MenuRadioItemGroup>
         </MenuContent>
       </MenuRoot>

@@ -1,24 +1,27 @@
+import { MenuItemProps } from "./MenuItem.types"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { MenuRadioItem } from "@chakra-ui/react"
-import { ThemeMenuItemProps } from "./ThemeMenuItem.types"
 
-export default function ThemeMenuItem({
+export default function MenuItem({
   value,
-  theme,
   Icon,
   label,
-}: ThemeMenuItemProps) {
-  const { primary, mainHover } = useThemeColors()
+  bg,
+  color,
+  ...props
+}: MenuItemProps) {
+  const { mainHover } = useThemeColors()
   return (
     <MenuRadioItem
       key={value}
       value={value}
       closeOnSelect={false}
-      bg={theme === value ? mainHover : "inherit"}
-      color={theme === value ? primary : "inherit"}
+      bg={bg}
+      color={color}
       _hover={{ bg: mainHover }}
       borderRadius="lg"
       cursor={"pointer"}
+      {...props}
     >
       {Icon} {label}
     </MenuRadioItem>

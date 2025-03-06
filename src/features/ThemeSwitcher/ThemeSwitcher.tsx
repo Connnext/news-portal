@@ -13,12 +13,13 @@ import {
 import { LightThemeIcon, DarkThemeIcon } from "@shared/ui/assets/icons"
 import { ColorMode, useColorMode } from "@shared/ui/components/color-mode"
 import { ThemeMode } from "./ThemeSwitcher.types"
-import ThemeMenuItem from "@shared/ui/MenuItem/ThemeMenuItem"
+
 import IconButton from "@shared/ui/Buttons/IconButton"
+import MenuItem from "@shared/ui/MenuItem"
 
 export const ThemeSwitcher: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode()
-  const { background } = useThemeColors()
+  const { background, mainHover, primary } = useThemeColors()
   const { t } = useTranslation()
   const systemTheme = useSystemTheme()
   const [theme, setTheme] = useState<ThemeMode>(colorMode)
@@ -57,25 +58,28 @@ export const ThemeSwitcher: React.FC = () => {
             value={colorMode}
             onValueChange={handleThemeChange}
           >
-            <ThemeMenuItem
+            <MenuItem
               value="light"
               Icon={<LightThemeIcon />}
               label={t("theme.light")}
-              theme={theme}
+              bg={theme === "light" ? mainHover : "inherit"}
+              color={theme === "light" ? primary : "inherit"}
             />
-            <ThemeMenuItem
+            <MenuItem
               value="dark"
-              Icon={<LightThemeIcon />}
+              Icon={<DarkThemeIcon />}
               label={t("theme.dark")}
-              theme={theme}
+              bg={theme === "dark" ? mainHover : "inherit"}
+              color={theme === "dark" ? primary : "inherit"}
             />
-            <ThemeMenuItem
+            <MenuItem
               value="system"
               Icon={
                 systemTheme === "dark" ? <DarkThemeIcon /> : <LightThemeIcon />
               }
               label={t("theme.system")}
-              theme={theme}
+              bg={theme === "system" ? mainHover : "inherit"}
+              color={theme === "system" ? primary : "inherit"}
             />
           </MenuRadioItemGroup>
         </MenuContent>
