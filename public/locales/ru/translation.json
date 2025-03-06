@@ -46,7 +46,7 @@
   "auth": {
     "username": "Имя пользователя",
     "password": "Пароль",
-    "email": "Электронная почта",
+    "email": "Email",
     "remember_me": "Запомнить меня",
     "forgot_password": "Забыли пароль?",
     "create_account": "Создать аккаунт",

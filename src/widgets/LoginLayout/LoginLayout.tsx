@@ -7,8 +7,10 @@ import { useThemeColors } from "./../../shared/hooks/useThemeColor"
 import { ThemeSwitcher } from "@features/ThemeSwitcher/ThemeSwitcher"
 import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
 
-import Moon from "@shared/ui/assets/images/moon.png"
+import MoonLight from "@shared/ui/assets/images/MoonLight.jpg"
+import MoonDark from "@shared/ui/assets/images/MoonDark.png"
 import BackButton from "@shared/ui/Buttons/BackButton"
+import { useColorMode } from "@shared/ui/components/color-mode"
 
 interface LoginLayoutProps {
   children: React.ReactNode
@@ -16,7 +18,7 @@ interface LoginLayoutProps {
 export default function LoginLayout({ children }: LoginLayoutProps) {
   const { backgroundContent, textSecondary, textSecondaryHover } =
     useThemeColors()
-
+  const { colorMode } = useColorMode()
   const { t } = useTranslation()
 
   return (
@@ -55,7 +57,13 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
         >
           {/* Левая часть - изображение */}
           <Box w="50%" h="100%">
-            <Image src={Moon} alt="Moon" objectFit="cover" w="100%" h="100%" />
+            <Image
+              src={colorMode === "light" ? MoonDark : MoonLight}
+              alt="Moon"
+              objectFit="cover"
+              w="100%"
+              h="100%"
+            />
           </Box>
 
           {/* Правая часть - форма */}
@@ -68,11 +76,20 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
             flexDirection="column"
           >
             {children}
+            <Text mt={10} fontSize="sm" color={textSecondary}>
+              {t("auth.dont_have_account")}{" "}
+              <Link
+                to={ROUTES.REGISTRATION}
+                style={{ fontWeight: "bold", color: textSecondaryHover }}
+              >
+                {t("auth.sign_up_here")}
+              </Link>
+            </Text>
           </Flex>
         </Flex>
 
         {/* Подвал */}
-        <Box
+        {/* <Box
           boxShadow="lg"
           mt={2}
           p={3}
@@ -90,7 +107,7 @@ export default function LoginLayout({ children }: LoginLayoutProps) {
               {t("auth.sign_up_here")}
             </Link>
           </Text>
-        </Box>
+        </Box> */}
       </Flex>
     </Container>
   )

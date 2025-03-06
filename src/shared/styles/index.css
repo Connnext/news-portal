@@ -20,3 +20,8 @@ html:not(.dark) {
 html.dark {
   background-color: var(--background-dark);
 }
+
+/* Убираем желтый фон при автозаполнении */
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
