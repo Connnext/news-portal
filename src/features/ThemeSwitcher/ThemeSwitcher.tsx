@@ -4,7 +4,6 @@ import { useThemeColors } from "@shared/hooks/useThemeColor"
 import useSystemTheme from "@shared/hooks/useSystemTheme"
 import {
   Box,
-  Button,
   MenuContent,
   MenuRadioItemGroup,
   MenuRoot,
@@ -15,10 +14,11 @@ import { LightThemeIcon, DarkThemeIcon } from "@shared/ui/assets/icons"
 import { ColorMode, useColorMode } from "@shared/ui/components/color-mode"
 import { ThemeMode } from "./ThemeSwitcher.types"
 import ThemeMenuItem from "@shared/ui/MenuItem/ThemeMenuItem"
+import IconButton from "@shared/ui/Buttons/IconButton"
 
 export const ThemeSwitcher: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode()
-  const { background, mainHover } = useThemeColors()
+  const { background } = useThemeColors()
   const { t } = useTranslation()
   const systemTheme = useSystemTheme()
   const [theme, setTheme] = useState<ThemeMode>(colorMode)
@@ -38,16 +38,9 @@ export const ThemeSwitcher: React.FC = () => {
     <Box position="relative">
       <MenuRoot>
         <MenuTrigger asChild>
-          <Button
-            aria-label="Toggle Theme"
-            variant="ghost"
-            size="md"
-            bg={"transparent"}
-            _hover={{ bg: mainHover }}
-            _focusVisible={{ outline: "none" }}
-          >
+          <IconButton ariaLabel="Toggle Theme">
             {colorMode === "light" ? <DarkThemeIcon /> : <LightThemeIcon />}
-          </Button>
+          </IconButton>
         </MenuTrigger>
         <MenuContent
           minW="10rem"

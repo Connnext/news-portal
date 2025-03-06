@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next"
 import {
   Box,
-  Button,
   MenuContent,
   MenuRadioItem,
   MenuRadioItemGroup,
@@ -11,6 +10,7 @@ import {
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 
 import { LanguageIcon, RusFlagIcon, USAFlagIcon } from "@shared/ui/assets/icons"
+import IconButton from "@shared/ui/Buttons/IconButton"
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation()
@@ -24,16 +24,9 @@ export const LanguageSwitcher = () => {
     <Box position="relative">
       <MenuRoot>
         <MenuTrigger asChild>
-          <Button
-            aria-label="Toggle Language"
-            variant="subtle"
-            size="md"
-            bg={"transparent"}
-            _hover={{ bg: mainHover }}
-            _focusVisible={{ outline: "none", bg: "transparent" }}
-          >
+          <IconButton ariaLabel="Toggle Language">
             <LanguageIcon />
-          </Button>
+          </IconButton>
         </MenuTrigger>
         <MenuContent
           minW="5rem"

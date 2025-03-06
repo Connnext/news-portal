@@ -8,11 +8,11 @@ import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
 
 import MoonLight from "@shared/ui/assets/images/MoonLight.png"
 import MoonDark from "@shared/ui/assets/images/MoonDark.png"
-import BackButton from "@shared/ui/Buttons/BackButton"
 
 import { Box, Container, Flex, Image, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
 import { LoginLayoutProps } from "./AuthLayout.types"
+import GoBack from "@features/GoBack"
 
 export default function AuthLayout({ children }: LoginLayoutProps) {
   const { backgroundContent, secondary } = useThemeColors()
@@ -23,7 +23,7 @@ export default function AuthLayout({ children }: LoginLayoutProps) {
       {/* <Container maxW="100vw" p={0} h="100vh"></Container> */}
       {/* Верхние переключатели */}
       <Flex justifyContent="space-between" pt={4} px={2}>
-        <BackButton />
+        <GoBack />
         <Link to={ROUTES.HOME}>
           <Text
             color={secondary}
