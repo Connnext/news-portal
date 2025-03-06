@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 import useSystemTheme from "@shared/hooks/useSystemTheme"
@@ -5,24 +6,22 @@ import {
   Box,
   Button,
   MenuContent,
-  MenuRadioItem,
   MenuRadioItemGroup,
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react"
 
 import { LightThemeIcon, DarkThemeIcon } from "@shared/ui/assets/icons"
-import { useState } from "react"
 import { ColorMode, useColorMode } from "@shared/ui/components/color-mode"
+import { ThemeMode } from "./ThemeSwitcher.types"
+import ThemeMenuItem from "@shared/ui/MenuItem/ThemeMenuItem"
 
-export const ThemeSwitcher = () => {
-  type ThemeMode = "light" | "dark" | "system"
-
+export const ThemeSwitcher: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode()
-  const { primary, background, mainHover } = useThemeColors()
+  const { background, mainHover } = useThemeColors()
   const { t } = useTranslation()
   const systemTheme = useSystemTheme()
-  const [theme, setTheme] = useState<ThemeMode>(systemTheme)
+  const [theme, setTheme] = useState<ThemeMode>(colorMode)
 
   const handleThemeChange = (e: { value: string }) => {
     const value = e.value as ThemeMode
@@ -34,25 +33,6 @@ export const ThemeSwitcher = () => {
       setColorMode(value as ColorMode)
     }
   }
-
-  const renderMenuItem = (
-    value: ThemeMode,
-    Icon: React.ReactElement,
-    label: string,
-  ) => (
-    <MenuRadioItem
-      key={value}
-      value={value}
-      closeOnSelect={false}
-      bg={theme === value ? mainHover : "inherit"}
-      color={theme === value ? primary : "inherit"}
-      _hover={{ bg: mainHover }}
-      borderRadius="lg"
-      cursor={"pointer"}
-    >
-      {Icon} {label}
-    </MenuRadioItem>
-  )
 
   return (
     <Box position="relative">
@@ -70,7 +50,7 @@ export const ThemeSwitcher = () => {
           </Button>
         </MenuTrigger>
         <MenuContent
-          minW="11rem"
+          minW="10rem"
           position="absolute"
           top="110%"
           left="0"
@@ -84,13 +64,26 @@ export const ThemeSwitcher = () => {
             value={colorMode}
             onValueChange={handleThemeChange}
           >
-            {renderMenuItem("light", <LightThemeIcon />, t("theme.light"))}
-            {renderMenuItem("dark", <DarkThemeIcon />, t("theme.dark"))}
-            {renderMenuItem(
-              "system",
-              systemTheme === "dark" ? <DarkThemeIcon /> : <LightThemeIcon />,
-              t("theme.system"),
-            )}
+            <ThemeMenuItem
+              value="light"
+              Icon={<LightThemeIcon />}
+              label={t("theme.light")}
+              theme={theme}
+            />
+            <ThemeMenuItem
+              value="dark"
+              Icon={<LightThemeIcon />}
+              label={t("theme.dark")}
+              theme={theme}
+            />
+            <ThemeMenuItem
+              value="system"
+              Icon={
+                systemTheme === "dark" ? <DarkThemeIcon /> : <LightThemeIcon />
+              }
+              label={t("theme.system")}
+              theme={theme}
+            />
           </MenuRadioItemGroup>
         </MenuContent>
       </MenuRoot>

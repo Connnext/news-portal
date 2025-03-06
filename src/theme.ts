@@ -2,9 +2,9 @@ import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react"
 
 const COLORS = {
   light: {
-    primary: "#2170cd",
-    primaryHover: "#3281de",
-    secondary: "#F5A623",
+    primary: "#ea1646",
+    primaryHover: "#c3183f",
+    secondary: "#170420",
     secondaryHover: "#F7BA54",
     textPrimary: "#000000",
     textSecondary: "#818C99",
@@ -16,10 +16,10 @@ const COLORS = {
     mainHover: "#e4e4e7",
   },
   dark: {
-    primary: "#2170cd",
-    primaryHover: "#3281de",
-    secondary: "#F5A623",
-    secondaryHover: "#F7BA54",
+    primary: "#3b46ff",
+    primaryHover: "#2f38cc",
+    secondary: "#ffd3fd",
+    secondaryHover: "#dfb4dd",
     textPrimary: "#FFFFFF",
     textSecondary: "#939393",
     textSecondaryHover: "#B2B2B2",

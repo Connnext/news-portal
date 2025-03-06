@@ -1,7 +1,8 @@
+import { ColorMode } from "@shared/ui/components/color-mode"
 import { useState, useEffect } from "react"
 
 const useSystemTheme = () => {
-  const [theme, setTheme] = useState<"light" | "dark">(
+  const [theme, setTheme] = useState<ColorMode>(
     window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light",

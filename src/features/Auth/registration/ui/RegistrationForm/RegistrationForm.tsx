@@ -9,9 +9,9 @@ import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
 import { Checkbox } from "@shared/ui/components/checkbox"
 import DynamicInput from "@shared/ui/Inputs/DynamicInput"
-import { FormValues } from "./LoginForm.types"
+import { FormValues } from "@features/Auth/login/ui/LoginForm/LoginForm.types"
 
-export default function LoginForm() {
+export default function RegistrationForm() {
   const {
     register,
     handleSubmit,
@@ -25,13 +25,10 @@ export default function LoginForm() {
     textPrimary,
     textSecondaryHover,
   } = useThemeColors()
-
   const { t } = useTranslation()
-
   const onSubmit: SubmitHandler<FormValues> = data => {
     console.log("Submitted data:", data)
   }
-
   return (
     <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
       <Flex align={"center"} justify={"center"} color={textPrimary}>
