@@ -2,7 +2,7 @@
 
 Welcome to my **News Portal** project! This application is designed to deliver a modern and customizable news platform with multilingual support, theming, and state management.
 
-🔗 **Live Demo:** [Visit News Portal](https://your-news-portal.com)
+🔗 **Live Demo:** [Visit News Portal](https://news-portal-one-beryl.vercel.app)
 
 ## 🚀 Tech Stack
 
@@ -137,7 +137,7 @@ The project follows the **Feature-Sliced Design (FSD)** methodology for modular 
 
 If you have any questions or suggestions, feel free to reach out!
 
-🔗 **Live Demo:** [Visit News Portal](https://your-news-portal.com)
+🔗 **Live Demo:** [Visit News Portal](https://news-portal-one-beryl.vercel.app)
 
 🔗 **GitHub:** [your-username/news-portal](https://github.com/your-username/news-portal)
 📧 **Email:** your-email@example.com
