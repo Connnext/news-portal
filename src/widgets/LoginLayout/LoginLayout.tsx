@@ -7,7 +7,7 @@ import { useThemeColors } from "./../../shared/hooks/useThemeColor"
 import { ThemeSwitcher } from "@features/ThemeSwitcher/ThemeSwitcher"
 import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
 
-import MoonLight from "@shared/ui/assets/images/MoonLight.jpg"
+import MoonLight from "@shared/ui/assets/images/MoonLight.png"
 import MoonDark from "@shared/ui/assets/images/MoonDark.png"
 import BackButton from "@shared/ui/Buttons/BackButton"
 import { useColorMode } from "@shared/ui/components/color-mode"
