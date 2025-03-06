@@ -10,7 +10,7 @@ import {
   DrawerRoot,
   DrawerTitle,
   DrawerTrigger,
-} from "components/ui/drawer"
+} from "@shared/ui/components/drawer"
 
 interface DrawerProps {
   isOpen: boolean // Проп для отслеживания состояния открытия панели
