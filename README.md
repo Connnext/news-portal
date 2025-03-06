@@ -2,6 +2,8 @@
 
 Welcome to my **News Portal** project! This application is designed to deliver a modern and customizable news platform with multilingual support, theming, and state management.
 
+🔗 **Live Demo:** [Visit News Portal](https://your-news-portal.com)
+
 ## 🚀 Tech Stack
 
 - ⚛️ **React** (Frontend Framework)
@@ -134,6 +136,8 @@ The project follows the **Feature-Sliced Design (FSD)** methodology for modular 
 ## 📞 Contact
 
 If you have any questions or suggestions, feel free to reach out!
+
+🔗 **Live Demo:** [Visit News Portal](https://your-news-portal.com)
 
 🔗 **GitHub:** [your-username/news-portal](https://github.com/your-username/news-portal)
 📧 **Email:** your-email@example.com
