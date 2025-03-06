@@ -13,7 +13,6 @@ export default function MenuItem({
   const { mainHover } = useThemeColors()
   return (
     <MenuRadioItem
-      key={value}
       value={value}
       closeOnSelect={false}
       bg={bg}

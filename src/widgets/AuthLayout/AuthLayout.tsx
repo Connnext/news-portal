@@ -3,9 +3,6 @@ import { Link } from "react-router"
 import { useColorMode } from "@shared/ui/components/color-mode"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 
-import { ThemeSwitcher } from "@features/ThemeSwitcher/ThemeSwitcher"
-import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
-
 import MoonLight from "@shared/ui/assets/images/MoonLight.png"
 import MoonDark from "@shared/ui/assets/images/MoonDark.png"
 
@@ -13,6 +10,8 @@ import { Box, Container, Flex, Image, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
 import { LoginLayoutProps } from "./AuthLayout.types"
 import GoBack from "@features/GoBack"
+import ThemeSwitcher from "@features/ThemeSwitcher"
+import LanguageSwitcher from "@features/LanguageSwitcher"
 
 export default function AuthLayout({ children }: LoginLayoutProps) {
   const { backgroundContent, secondary } = useThemeColors()

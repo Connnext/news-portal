@@ -2,8 +2,9 @@ import React from "react"
 import { Flex, IconButton, Text } from "@chakra-ui/react"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { HeaderProps } from "./Header.types"
-import { ThemeSwitcher } from "@features/ThemeSwitcher/ThemeSwitcher"
-import { LanguageSwitcher } from "@features/LanguageSwitcher/LanguageSwitcher"
+
+import LanguageSwitcher from "@features/LanguageSwitcher"
+import ThemeSwitcher from "@features/ThemeSwitcher"
 
 const Header: React.FC<HeaderProps> = ({ onOpen }) => {
   const { background, textPrimary } = useThemeColors()
