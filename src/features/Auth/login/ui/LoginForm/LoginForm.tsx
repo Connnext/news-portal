@@ -5,11 +5,13 @@ import { useThemeColors } from "@shared/hooks/useThemeColor"
 
 import { SubmitHandler, useForm } from "react-hook-form"
 
-import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
+import { Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
 import { Checkbox } from "@shared/ui/components/checkbox"
 import DynamicInput from "@shared/ui/Inputs/DynamicInput"
 import { FormValues } from "./LoginForm.types"
+import TextButton from "@shared/ui/Buttons/TextButton"
+import MainLink from "@shared/ui/Links/MainLink"
 
 export default function LoginForm() {
   const {
@@ -17,14 +19,8 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>()
-  const {
-    primary,
-    primaryHover,
-    secondary,
-    textSecondary,
-    textPrimary,
-    textSecondaryHover,
-  } = useThemeColors()
+  const { secondary, textSecondary, textPrimary, textSecondaryHover } =
+    useThemeColors()
 
   const { t } = useTranslation()
 
@@ -36,21 +32,23 @@ export default function LoginForm() {
     <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
       <Flex align={"center"} justify={"center"} color={textPrimary}>
         <Stack mx={"auto"} maxW={"lg"}>
+          {/* maxW={"xl"} width="100%" */}
           <Flex
             flexDirection={"column"}
             justifyContent={"space-between"}
             color={textPrimary}
-            gap={4}
+            gap={6}
           >
             <Heading
               color={secondary}
               display={"flex"}
               justifyContent={"center"}
-              size={"2xl"}
+              size={"3xl"}
+              transition={"background 0.1s ease-in-out color 0.1s ease-in-out"}
             >
               {t("navigation.login")}
             </Heading>
-            <Stack gap={"5"} align={"center"} maxW={"sm"} w={"full"}>
+            <Stack gap={"5"} align={"center"} maxW={"xl"} w={"full"}>
               <DynamicInput
                 label={t("auth.email")}
                 {...register("email", {
@@ -72,7 +70,6 @@ export default function LoginForm() {
                     message: "Password must be at least 6 characters",
                   },
                 })}
-                placeholder="Enter your password"
                 error={errors.password?.message}
               />
 
@@ -83,36 +80,32 @@ export default function LoginForm() {
                     variant={"subtle"}
                     size={"md"}
                     colorScheme="blue"
+                    transition={
+                      "background 0.1s ease-in-out color 0.1s ease-in-out"
+                    }
                   >
                     {t("auth.remember_me")}
                   </Checkbox>
-                  <Text fontSize={"14px"} color={textSecondaryHover}>
+                  <Text
+                    transition={
+                      "background 0.1s ease-in-out color 0.1s ease-in-out"
+                    }
+                    fontSize={"14px"}
+                    color={textSecondaryHover}
+                  >
                     <Link to={ROUTES.FORGOT_PASSWORD}>
                       {t("auth.forgot_password")}
                     </Link>
                   </Text>
                 </Flex>
 
-                <Button
-                  type="submit"
-                  w={"full"}
-                  bg={primary}
-                  color={"white"}
-                  _hover={{
-                    bg: primaryHover,
-                  }}
-                >
-                  {t("navigation.login")}
-                </Button>
+                <TextButton>{t("navigation.login")}</TextButton>
               </Stack>
-              <Text mt={10} fontSize="sm" color={textSecondary}>
+              <Text mt={10} fontSize="xs" color={textSecondary}>
                 {t("auth.dont_have_account")}{" "}
-                <Link
-                  to={ROUTES.REGISTRATION}
-                  style={{ fontWeight: "bold", color: textSecondaryHover }}
-                >
+                <MainLink route={ROUTES.REGISTRATION}>
                   {t("auth.sign_up_here")}
-                </Link>
+                </MainLink>
               </Text>
             </Stack>
           </Flex>

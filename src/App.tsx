@@ -10,11 +10,7 @@ function App() {
   const systemTheme = useSystemTheme()
   return (
     <ChakraProvider value={theme}>
-      <ThemeProvider
-        defaultTheme={systemTheme}
-        attribute="class"
-        disableTransitionOnChange
-      >
+      <ThemeProvider defaultTheme={systemTheme} attribute="class">
         <AppRouter />
       </ThemeProvider>
     </ChakraProvider>

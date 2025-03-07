@@ -17,7 +17,6 @@ export default function DynamicInput({
     <Field.Root gap={1}>
       <Box pos="relative" w="full">
         <Input
-          {...props}
           className="peer"
           placeholder=""
           borderWidth={"1px"}
@@ -26,6 +25,8 @@ export default function DynamicInput({
             outline: "none",
             borderWidth: "2px",
           }}
+          transition={"background 0.1s ease-in-out color 0.1s ease-in-out"}
+          {...props}
         />
         <Field.Label
           p={"0 8px"}
