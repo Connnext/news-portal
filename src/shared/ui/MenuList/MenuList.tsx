@@ -6,6 +6,7 @@ export default function MenuList({ children, minW, ...props }: MenuListProps) {
   const { background } = useThemeColors()
   return (
     <MenuContent
+      p={2}
       minW={minW}
       position="absolute"
       top="110%"
