@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
-import { IconButtonProps } from "./IconButton.types" // Убедись, что путь верный
+import { IconButtonProps } from "./IconButton.types"
 
 export default function IconButton({
   ariaLabel,
@@ -11,7 +11,7 @@ export default function IconButton({
 
   return (
     <Button
-      aria-label={ariaLabel} // Исправлено
+      aria-label={ariaLabel}
       variant="ghost"
       size="md"
       bg="transparent"

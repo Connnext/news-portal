@@ -1,12 +1,9 @@
-// vite.config.js
+/// <reference types="vitest" />
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 
 export default defineConfig({
   plugins: [react()],
-  // test: {
-  //   globals: true,
-  // },
   resolve: {
     alias: {
       "@app": "/src/app",
@@ -16,5 +13,10 @@ export default defineConfig({
       "@features": "/src/features",
       "@shared": "/src/shared",
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/setupTests.ts",
   },
 })
