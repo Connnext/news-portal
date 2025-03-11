@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite"
+
+import { defineConfig } from "vitest/config"
 import react from "@vitejs/plugin-react"
 
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
       "@entities": "/src/entities",
       "@features": "/src/features",
       "@shared": "/src/shared",
+      "@__test__": "/src/__test__",
     },
   },
   test: {

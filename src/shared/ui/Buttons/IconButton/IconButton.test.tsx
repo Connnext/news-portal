@@ -1,8 +1,10 @@
-import { render, screen } from "@testing-library/react"
+import { screen } from "@testing-library/react"
+import { render } from "@__test__/render"
+import { describe, it, expect } from "vitest"
 import IconButton from "./IconButton"
 
 describe("IconButton", () => {
-  test("rendering content", () => {
+  it("rendering content", () => {
     render(<IconButton ariaLabel="Test Button">Hello World!</IconButton>)
 
     expect(screen.getByText("Hello World!")).toBeInTheDocument()
