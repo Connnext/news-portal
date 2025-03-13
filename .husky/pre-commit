@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Running precommit hook"
-npm run precommit
+npx lint-staged

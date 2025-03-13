@@ -54,6 +54,9 @@
     "vitest": "^3.0.8"
   },
   "lint-staged": {
-    "*.ts?(x)": "eslint --fix"
+    "*.ts?(x)": [
+      "eslint --fix",
+      "vitest --run"
+    ]
   }
 }
