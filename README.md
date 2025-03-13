@@ -13,7 +13,7 @@ Welcome to my **News Portal** project! This application is designed to deliver a
 - 🎨 **Chakra UI** (Customizable UI with Theme Support)
 - 🌗 **Themes** (Light/Dark mode via Chakra UI's `useColorMode`)
 - 📡 **Axios** (API Requests)
-- 🧪 **Jest + React Testing Library** (Unit & Component Testing)
+- 🧪 **Vitest + React Testing Library** (Unit & Component Testing)
 - 📂 **Feature-Sliced Design (FSD)** (Project Structure & Code Organization)
 
 ---
@@ -78,7 +78,7 @@ Before you start, ensure you have the following installed:
 4. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    #### or
@@ -94,7 +94,7 @@ Before you start, ensure you have the following installed:
 To run unit tests:
 
 ```bash
-npm test
+npm run test
 ```
 
 #### or
