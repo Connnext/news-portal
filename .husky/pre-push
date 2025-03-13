@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "Running pre-push hook"
-npm run test -- --run
-# Это заставит vitest запускать тесты один раз, а не в режиме ожидания изменений.
