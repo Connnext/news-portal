@@ -1,3 +1,8 @@
 #!/bin/sh
-echo "Running precommit hook"
-npx lint-staged
+echo "🔍 Running ESLint..."
+npm run precommit
+
+echo "🧪 Running tests..."
+npm run test -- --run
+
+echo "✅ Pre-commit checks passed!"
