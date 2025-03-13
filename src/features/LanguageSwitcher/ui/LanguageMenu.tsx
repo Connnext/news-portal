@@ -18,6 +18,9 @@ export default function LanguageMenu() {
   return (
     <MenuList minW="5rem">
       <MenuRadioItemGroup
+        display={"flex"}
+        flexDirection={"column"}
+        gap={1}
         value={i18n.language}
         onValueChange={handleLanguageChange}
       >

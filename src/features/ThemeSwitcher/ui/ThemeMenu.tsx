@@ -31,7 +31,13 @@ export default function ThemeMenu() {
   }
   return (
     <MenuList minW="11rem">
-      <MenuRadioItemGroup value={colorMode} onValueChange={handleThemeChange}>
+      <MenuRadioItemGroup
+        display={"flex"}
+        flexDirection={"column"}
+        gap={1}
+        value={colorMode}
+        onValueChange={handleThemeChange}
+      >
         <MenuItem
           value="light"
           Icon={<LightThemeIcon />}
