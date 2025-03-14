@@ -21,7 +21,13 @@ export default function AuthLayout({ children }: LoginLayoutProps) {
     <Container maxW={"5xl"}>
       {/* <Container maxW="100vw" p={0} h="100vh"></Container> */}
       {/* Верхние переключатели */}
-      <Flex justifyContent="space-between" pt={4} px={2}>
+      <Flex
+        justifyContent="space-between"
+        px={"6"}
+        height={"20"}
+        width={"full"}
+        alignItems={"center"}
+      >
         <GoBack />
         <Link to={ROUTES.HOME}>
           <Text

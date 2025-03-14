@@ -11,6 +11,7 @@ const Header: React.FC<HeaderProps> = ({ onOpen }) => {
 
   return (
     <Flex
+      zIndex={999}
       width={"full"}
       px={"4"}
       position={"sticky"}
