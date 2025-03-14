@@ -2,7 +2,15 @@
   "theme": {
     "dark": "Темная тема",
     "light": "Светлая тема",
-    "system": "Системная тема"
+    "system": "Системная тема",
+    "change_theme": "Сменить тему"
+  },
+  "language": {
+    "change_language": "Сменить язык",
+    "english": "English",
+    "spanish": "Español",
+    "french": "Français",
+    "german": "Deutsch"
   },
   "navigation": {
     "home": "Главная",

@@ -2,7 +2,15 @@
   "theme": {
     "dark": "Dark Theme",
     "light": "Light Theme",
-    "system": "System Theme"
+    "system": "System Theme",
+    "change_theme": "Change Theme"
+  },
+  "language": {
+    "change_language": "Change Language",
+    "english": "English",
+    "spanish": "Español",
+    "french": "Français",
+    "german": "Deutsch"
   },
   "navigation": {
     "home": "Home",
