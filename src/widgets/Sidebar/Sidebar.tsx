@@ -65,7 +65,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
       top="0"
       h="fit-content"
     >
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+      <Flex h="20" alignItems="center" px="5" justifyContent="space-between">
         <Text
           fontSize="2xl"
           fontFamily="monospace"

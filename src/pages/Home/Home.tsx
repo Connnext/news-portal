@@ -1,9 +1,10 @@
+"use client"
 import { Box, Flex } from "@chakra-ui/react"
 import PostList from "@entities/post/ui/PostList"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 
 export default function Home() {
-  const { backgroundContent } = useThemeColors()
+  const { backgroundContent, border } = useThemeColors()
   const posts = [
     {
       userId: 1,
@@ -37,28 +38,33 @@ export default function Home() {
       body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
     },
   ]
+
   return (
     <Flex gap={4}>
       <Box
-        // ml={{ base: 0, md: 60 }}
         flex={2}
-        // p="4"
-        border={"red"}
         borderRadius={"2xl"}
         background={backgroundContent}
+        boxShadow="lg"
+        border={"1px solid"}
+        borderColor={border}
       >
-        {/* Outlet отображает дочерние маршруты */}
         <PostList posts={posts} />
       </Box>
       <Box
-        // ml={{ base: 0, md: 60 }}
+        borderWidth="2px"
         flex={1}
         p="4"
-        border={"red"}
+        boxShadow="lg"
+        border={"1px solid"}
+        borderColor={border}
         borderRadius={"2xl"}
-        background={"red"}
+        background={backgroundContent}
+        maxH={"lg"}
+        position="sticky" // Используем sticky
+        top="20" // Прилипает к верхней части экрана при прокрутке
+        zIndex={10} // Устанавливаем уровень, чтобы элемент был выше
       >
-        {/* Outlet отображает дочерние маршруты */}
         <div>
           <h1>Stories</h1>
           <h1>CreateNewPost</h1>
