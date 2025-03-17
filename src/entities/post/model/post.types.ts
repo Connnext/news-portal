@@ -1,8 +1,8 @@
 export interface IPost {
-  userId: number
   id: number
+  userId: number
   title: string
-  body: string
+  description: string
 }
 export interface IPostCardProps {
   post: IPost

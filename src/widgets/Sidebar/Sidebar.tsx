@@ -1,12 +1,11 @@
-import React from "react"
-import {} from "react-icons/gi"
-import { Box, Button, Flex, Text } from "@chakra-ui/react"
-import { LinkItemProps, SidebarProps } from "./Sidebar.types"
-import NavItem from "./NavItem/NavItem"
-import { ROUTES } from "@shared/constants/routes"
-
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 import { useTranslation } from "react-i18next"
+
+import { Box, Button, Flex, Text } from "@chakra-ui/react"
+
+import { LinkItemProps, SidebarProps } from "./Sidebar.types"
+import { ROUTES } from "@shared/constants/routes"
+import NavItem from "./NavItem/NavItem"
 
 import {
   AccountIcon,

@@ -1,9 +1,10 @@
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 import { useTranslation } from "react-i18next"
 import { useThemeColors } from "@shared/hooks/useThemeColor"
 
-import { SubmitHandler, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
+import { loginSubmit } from "../../model/login"
 
 import { Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import { ROUTES } from "@shared/constants/routes"
@@ -12,6 +13,7 @@ import DynamicInput from "@shared/ui/Inputs/DynamicInput"
 import { FormValues } from "./LoginForm.types"
 import TextButton from "@shared/ui/Buttons/TextButton"
 import MainLink from "@shared/ui/Links/MainLink"
+import { toaster } from "@shared/ui/components/toaster"
 
 export default function LoginForm() {
   const {
@@ -19,17 +21,26 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>()
+
   const { secondary, textSecondary, textPrimary, textSecondaryHover } =
     useThemeColors()
 
   const { t } = useTranslation()
+  const navigate = useNavigate()
 
-  const onSubmit: SubmitHandler<FormValues> = data => {
-    console.log("Submitted data:", data)
+  const handleSubmitAndRedirect = async (data: FormValues) => {
+    // вызов функции loginSubmit, передаем данные формы
+    await loginSubmit(data)
+
+    // если данные успешно обработаны, переходим на страницу Home
+    navigate(ROUTES.HOME)
+    toaster.success({ title: "Submitted successful" })
+    toaster.success({ title: "Submitted successful" })
+    toaster.success({ title: "Submitted successful" })
   }
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+    <form autoComplete="off" onSubmit={handleSubmit(handleSubmitAndRedirect)}>
       <Flex align={"center"} justify={"center"} color={textPrimary}>
         <Stack mx={"auto"} maxW={"lg"}>
           {/* maxW={"xl"} width="100%" */}
@@ -99,7 +110,7 @@ export default function LoginForm() {
                   </Text>
                 </Flex>
 
-                <TextButton>{t("navigation.login")}</TextButton>
+                <TextButton type="submit">{t("navigation.login")}</TextButton>
               </Stack>
               <Text mt={10} fontSize="xs" color={textSecondary}>
                 {t("auth.dont_have_account")}{" "}
