@@ -1,7 +1,7 @@
 import { IPostCardProps } from "@entities/post/model/post.types"
 
 import { Alert, Button, Card, Image, Stack, Text } from "@chakra-ui/react"
-import { Toaster, toaster } from "@shared/ui/components/toaster"
+import { toaster } from "@shared/ui/components/toaster"
 
 export default function PostCard({ post }: IPostCardProps) {
   return (
@@ -69,7 +69,6 @@ export default function PostCard({ post }: IPostCardProps) {
         </Button>
         <Button variant="ghost">Comment</Button>
         <Button variant="ghost">Forward</Button>
-        <Toaster />
       </Card.Footer>
     </Card.Root>
   )

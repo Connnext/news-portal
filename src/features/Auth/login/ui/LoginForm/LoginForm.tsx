@@ -35,8 +35,6 @@ export default function LoginForm() {
     // если данные успешно обработаны, переходим на страницу Home
     navigate(ROUTES.HOME)
     toaster.success({ title: "Submitted successful" })
-    toaster.success({ title: "Submitted successful" })
-    toaster.success({ title: "Submitted successful" })
   }
 
   return (
